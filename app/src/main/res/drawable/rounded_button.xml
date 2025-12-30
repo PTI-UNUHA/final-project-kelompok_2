@@ -1,0 +1,9 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+
+    <solid android:color="#FFC500" />   <!-- Warna tombol -->
+    <corners android:radius="40dp" />   <!-- 🎯 Lengkungan -->
+    <stroke
+        android:width="2dp"
+        android:color="#E2DD9D" />      <!-- (opsional) warna garis pinggir -->
+</shape>

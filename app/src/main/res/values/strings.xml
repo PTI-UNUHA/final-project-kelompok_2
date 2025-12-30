@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">media pembelajaran</string>
+    <string name="mini_game">Mini Game</string>
+    <string name="karakter">karakter</string>
+    <string name="halo_pythonista">Halo, Pythonista</string>
+    <string name="ayo_belajar_perulangan_ndengan_python">Ayo Belajar Perulangan\ndengan PYTHON</string>
+    <string name="todo">TODO</string>
+    <string name="ayo_belajar_nperulangan_python">Ayo Belajar\nPerulangan Python!</string>
+    <string name="maskot">maskot</string>
+    <string name="pahami_logika_perulangan_n_dengan_cara_menyenangkan">Pahami logika perulangan\n dengan cara menyenangkan.</string>
+    <string name="mulai_sekarang">Mulai Sekarang</string>
+    <string name="quiz_mudah">Quiz Mudah</string>
+    <string name="skor_sulit">SKOR SULIT</string>
+    <string name="TODO">TODO</string>
+    <string name="for_i_in_range_5_0_1">for i in range(5, 0, -1):</string>
+</resources>

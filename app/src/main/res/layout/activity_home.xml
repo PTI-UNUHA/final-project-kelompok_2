@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FFFFFF">
+
+    <!-- ================= WAVE ATAS ================= -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="120dp">
+
+        <ImageView
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:background="@drawable/top_wave_yellow"
+            android:translationX="-20dp"
+            android:translationY="-20dp" />
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@drawable/top_wave_blue"
+            android:translationX="-30dp"
+            android:translationY="-40dp" />
+    </FrameLayout>
+
+    <!-- ================= KONTEN UTAMA ================= -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+        <!-- MASKOT -->
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:src="@drawable/maskot"
+            android:contentDescription="Maskot" />
+
+        <!-- SAPAAN -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Halo, Pythonista"
+            android:textColor="#3A427A"
+            android:textSize="16sp"
+            android:layout_marginTop="10dp" />
+
+        <!-- JUDUL -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ayo Belajar Perulangan\ndengan PYTHON"
+            android:textColor="#3A427A"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginTop="4dp" />
+
+        <!-- ================= GRID MENU ================= -->
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="412dp"
+            android:columnCount="2"
+            android:padding="20dp">
+
+            <!-- MATERI -->
+            <Button
+                android:id="@+id/btnMateri"
+                android:layout_width="0dp"
+                android:layout_height="150dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="10dp"
+                android:background="@drawable/rounded_blue_card"
+                android:drawableTop="@drawable/ic_book"
+                android:drawablePadding="14dp"
+                android:drawableTint="#FFFFFF"
+                android:gravity="center"
+                android:paddingTop="22dp"
+                android:text="Materi"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <!-- QUIZ -->
+            <Button
+                android:id="@+id/btnQuiz"
+                android:layout_width="0dp"
+                android:layout_height="150dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="10dp"
+                android:background="@drawable/rounded_yellow_card"
+                android:drawableTop="@drawable/ic_quiz"
+                android:drawablePadding="14dp"
+                android:drawableTint="#FFFFFF"
+                android:gravity="center"
+                android:paddingTop="22dp"
+                android:text="Quiz"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <!-- SKOR -->
+            <Button
+                android:id="@+id/btnSkor"
+                android:layout_width="0dp"
+                android:layout_height="150dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="10dp"
+                android:background="@drawable/rounded_red_card"
+                android:drawableTop="@drawable/ic_game"
+                android:drawablePadding="14dp"
+                android:drawableTint="#FFFFFF"
+                android:gravity="center"
+                android:paddingTop="22dp"
+                android:text="Skor"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <!-- LEADERBOARD -->
+            <Button
+                android:id="@+id/btnLeaderboard"
+                android:layout_width="0dp"
+                android:layout_height="150dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="10dp"
+                android:background="@drawable/rounded_purple_card"
+                android:drawableTop="@drawable/ic_leaderboard"
+                android:drawablePadding="14dp"
+                android:drawableTint="#FFFFFF"
+                android:gravity="center"
+                android:paddingTop="22dp"
+                android:text="Leaderboard"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+        </GridLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white">
+
+    <!-- ================= DEKORASI ATAS ================= -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="180dp">
+
+        <View
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:background="@drawable/top_wave_yellow"
+            android:translationX="-20dp"
+            android:translationY="-20dp" />
+
+        <View
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@drawable/top_wave_blue"
+            android:translationX="-20dp"
+            android:translationY="-40dp" />
+    </RelativeLayout>
+
+    <!-- ================= JUDUL ================= -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Masukkan Nama dan NIM Kamu"
+        android:textColor="#2E2E5E"
+        android:textStyle="bold"
+        android:textSize="30sp"
+        android:gravity="center"
+        android:paddingHorizontal="24dp"
+        android:layout_marginTop="8dp" />
+
+    <!-- ================= INPUT ================= -->
+    <EditText
+        android:id="@+id/inputName"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:hint="Nama Lengkap"
+        android:background="@drawable/edittext_background"
+        android:paddingHorizontal="15dp"
+        android:textSize="16sp"
+        android:drawableStart="@drawable/ic_personlogin"
+        android:drawablePadding="8dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginHorizontal="40dp" />
+
+    <EditText
+        android:id="@+id/inputNim"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:hint="NIM"
+        android:inputType="number"
+        android:background="@drawable/edittext_background"
+        android:paddingHorizontal="15dp"
+        android:textSize="16sp"
+        android:drawableStart="@drawable/ic_idcardlogin"
+        android:drawablePadding="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginHorizontal="40dp" />
+
+    <!-- ================= TOMBOL ================= -->
+    <Button
+        android:id="@+id/btnMasuk"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:text="Masuk"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:background="@drawable/rounded_button"
+        android:backgroundTint="#FFB703"
+        android:layout_marginTop="24dp"
+        android:layout_marginHorizontal="40dp" />
+
+    <!-- ================= BAGIAN BAWAH ================= -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <!-- Background wave -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bottom_wave_bglogin" />
+
+        <!-- Maskot -->
+        <ImageView
+            android:layout_width="230dp"
+            android:layout_height="230dp"
+            android:src="@drawable/maskot"
+            android:layout_gravity="bottom|end"
+            android:layout_marginEnd="12dp"
+            android:layout_marginBottom="12dp" />
+    </FrameLayout>
+
+</LinearLayout>

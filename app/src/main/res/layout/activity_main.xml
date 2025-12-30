@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@android:color/white">
+
+    <!-- ================= WAVE ATAS ================= -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/top_wave_background" />
+
+        <!-- TITLE -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/ayo_belajar_nperulangan_python"
+            android:textColor="@android:color/white"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginTop="40dp"/>
+    </FrameLayout>
+
+    <!-- ================= KONTEN TENGAH ================= -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="4"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+        <!-- MASKOT -->
+        <ImageView
+            android:layout_width="275dp"
+            android:layout_height="287dp"
+            android:src="@drawable/maskot"
+            android:contentDescription="@string/maskot" />
+
+        <!-- DESKRIPSI -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/pahami_logika_perulangan_n_dengan_cara_menyenangkan"
+            android:textColor="@android:color/black"
+            android:textSize="22sp"
+            android:gravity="center"
+            android:layout_marginTop="16dp"/>
+    </LinearLayout>
+
+    <!-- ================= TOMBOL ================= -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/btnStart"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="@string/mulai_sekarang"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:background="@drawable/rounded_button"
+            android:textColor="#3A427A"
+            android:layout_marginHorizontal="40dp"/>
+    </LinearLayout>
+
+    <!-- ================= WAVE BAWAH ================= -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bottom_wave_background" />
+    </FrameLayout>
+
+</LinearLayout>

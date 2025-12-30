@@ -1,0 +1,12 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Background kuning muda -->
+    <solid android:color="#FFF5C2" />
+
+    <!-- Sudut membulat -->
+    <corners android:radius="18dp" />
+
+    <!-- Border kuning tua -->
+    <stroke
+        android:width="2dp"
+        android:color="#FFC107"/>
+</shape>

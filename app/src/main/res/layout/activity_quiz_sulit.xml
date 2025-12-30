@@ -1,0 +1,397 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
+
+    <!-- HEADER MERAH -->
+    <!-- Toolbar -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="#E53935"
+        android:padding="8dp">
+
+        <TextView
+            android:id="@+id/tvToolbarTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Quiz Sulit"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_gravity="center_vertical" />
+
+        <Button
+            android:id="@+id/btnHome"
+            android:layout_width="40dp"
+            android:layout_height="50dp"
+            android:background="@android:color/transparent"
+            android:drawableTop="@drawable/ic_home"
+            android:drawableTint="#FFFFFF"
+            android:gravity="center"
+            android:padding="0dp"
+            android:layout_marginLeft="270dp"
+            android:paddingLeft="-90dp" />
+    </androidx.appcompat.widget.Toolbar>
+
+    <!-- TIMER + PROGRESS -->
+    <LinearLayout
+        android:id="@+id/topProgress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:padding="10dp"
+        android:layout_below="@id/toolbar">
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/ic_timer" />
+
+        <TextView
+            android:id="@+id/tvTimer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="15:00"
+            android:textColor="#000"
+            android:textSize="15sp"
+            android:layout_marginLeft="6dp" />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="@android:style/Widget.ProgressBar.Horizontal"
+            android:layout_width="0dp"
+            android:layout_height="12dp"
+            android:layout_weight="1"
+            android:max="100"
+            android:progress="40"
+            android:layout_marginLeft="16dp" />
+
+        <TextView
+            android:id="@+id/tvProgress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3/10"
+            android:textColor="#000"
+            android:textSize="15sp"
+            android:layout_marginLeft="10dp" />
+    </LinearLayout>
+
+    <!-- SCROLL CONTENT -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp"
+        android:layout_below="@id/topProgress"
+        android:layout_above="@+id/bottomNav">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!-- TEKS SOAL QUIZ SULIT -->
+            <TextView
+                android:id="@+id/tvQuestion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Analysis dan lengkapi kode Python berikut yang mengimplementasikan nested loops..."
+                android:textSize="16sp"
+                android:textColor="#333"
+                android:lineSpacingExtra="3dp" />
+
+            <!-- KODE BOX -->
+            <TextView
+                android:id="@+id/codeBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#E6E6E6"
+                android:padding="14dp"
+                android:layout_marginTop="14dp"
+                android:textSize="14sp"
+                android:textColor="#333"
+                android:fontFamily="monospace"
+                android:text="import itertools\nlist_data = [1,3,3,4]\nfor combo in itertools.product(list_data, repeat=3):\n    if _____:\n        print(combo)" />
+
+            <!-- MASKOT + BUBBLE -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginTop="20dp">
+
+                <ImageView
+                    android:id="@+id/imgMascot"
+                    android:layout_width="190dp"
+                    android:layout_height="190dp"
+                    android:src="@drawable/maskot" />
+
+                <TextView
+                    android:id="@+id/tvSpirit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Fokus dan Berpikir Kritis!"
+                    android:background="#FFD65B"
+                    android:padding="10dp"
+                    android:textStyle="bold"
+                    android:textColor="#000"
+                    android:layout_marginLeft="-10dp" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- BOTTOM NAV -->
+    <LinearLayout
+        android:id="@+id/bottomNav"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:padding="10dp"
+        android:layout_alignParentBottom="true"
+        android:background="#FFFFFF"
+        android:elevation="4dp">
+
+        <Button
+            android:id="@+id/btnPrev"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Sebelumnya"
+            android:textSize="20sp"
+            android:background="#D32F2F"
+            android:textColor="#FFFFFF" />
+
+        <Space
+            android:layout_width="12dp"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/btnNext"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="BERIKUTNYA"
+            android:textSize="20sp"
+            android:background="#29B6F6"
+            android:textColor="#FFFFFF" />
+    </LinearLayout>
+
+    <!-- CUSTOM KEYBOARD -->
+    <LinearLayout
+        android:id="@+id/customKeyboard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="8dp"
+        android:layout_marginTop="560dp">
+
+        <!-- Baris 1 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:text="A"
+                android:textColor="#333"
+                android:textSize="18sp"
+                android:background="#EEEEEE" />
+
+            <Space android:layout_width="6dp" android:layout_height="1dp" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:text="B"
+                android:textColor="#333"
+                android:textSize="18sp"
+                android:background="#EEEEEE" />
+
+            <Space android:layout_width="6dp" android:layout_height="1dp" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:text="C"
+                android:textColor="#333"
+                android:textSize="18sp"
+                android:background="#EEEEEE" />
+
+            <Space android:layout_width="6dp" android:layout_height="1dp" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:text="D"
+                android:textColor="#333"
+                android:textSize="18sp"
+                android:background="#EEEEEE" />
+        </LinearLayout>
+
+        <!-- Baris 2 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="8dp">
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:text="E"
+                android:textColor="#333"
+                android:textSize="18sp"
+                android:background="#EEEEEE" />
+
+            <Space android:layout_width="6dp" android:layout_height="1dp" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:text="F"
+                android:textColor="#333"
+                android:textSize="18sp"
+                android:background="#EEEEEE" />
+
+            <Space android:layout_width="6dp" android:layout_height="1dp" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:text="G"
+                android:textColor="#333"
+                android:textSize="18sp"
+                android:background="#EEEEEE" />
+
+            <Space android:layout_width="6dp" android:layout_height="1dp" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:text="H"
+                android:textColor="#333"
+                android:textSize="18sp"
+                android:background="#EEEEEE" />
+        </LinearLayout>
+
+        <!-- Baris 3 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="8dp">
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:text="I"
+                android:textColor="#333"
+                android:textSize="18sp"
+                android:background="#EEEEEE" />
+
+            <Space android:layout_width="6dp" android:layout_height="1dp" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:text="J"
+                android:textColor="#333"
+                android:textSize="18sp"
+                android:background="#EEEEEE" />
+
+            <Space android:layout_width="6dp" android:layout_height="1dp" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:text="K"
+                android:textColor="#333"
+                android:textSize="18sp"
+                android:background="#EEEEEE" />
+
+            <Space android:layout_width="6dp" android:layout_height="1dp" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:text="L"
+                android:textColor="#333"
+                android:textSize="18sp"
+                android:background="#EEEEEE" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="8dp">
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:text="M"
+                android:textColor="#333"
+                android:textSize="18sp"
+                android:background="#EEEEEE" />
+
+            <Space android:layout_width="6dp" android:layout_height="1dp" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:text="N"
+                android:textColor="#333"
+                android:textSize="18sp"
+                android:background="#EEEEEE" />
+
+            <Space android:layout_width="6dp" android:layout_height="1dp" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:text="O"
+                android:textColor="#333"
+                android:textSize="18sp"
+                android:background="#EEEEEE" />
+
+            <Space android:layout_width="6dp" android:layout_height="1dp" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:text="P"
+                android:textColor="#333"
+                android:textSize="18sp"
+                android:background="#EEEEEE" />
+        </LinearLayout>
+
+    </LinearLayout>
+</RelativeLayout>
