@@ -1,9 +1,8 @@
 package com.example.mediapembelajaran
 
-import android.annotation.SuppressLint
 import android.content.Intent
-import android.graphics.Color
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
@@ -20,6 +19,8 @@ class QuizMudahActivity : AppCompatActivity() {
     private lateinit var optC: TextView
     private lateinit var optD: TextView
     private lateinit var btnNext: Button
+    private lateinit var tvWrong: TextView
+    private lateinit var tvInfo: TextView
 
     private val questions = listOf(
         Question("Variabel dalam Python yang digunakan untuk menyimpan teks adalah...",
@@ -44,6 +45,8 @@ class QuizMudahActivity : AppCompatActivity() {
         optC = findViewById(R.id.optC)
         optD = findViewById(R.id.optD)
         btnNext = findViewById(R.id.btnNext)
+        tvWrong = findViewById(R.id.tvWrong)
+        tvInfo = findViewById(R.id.tvInfo)
         val btnHome = findViewById<Button>(R.id.btnHome)
 
         displayQuestion()
@@ -60,10 +63,10 @@ class QuizMudahActivity : AppCompatActivity() {
                 resetOptionStyles()
             } else {
                 // Kuis selesai, pindah ke layar hasil
-                 val intent = Intent(this, QuizResultActivity::class.java)
-                 intent.putExtra("SCORE", score)
-                 intent.putExtra("TOTAL_QUESTIONS", questions.size)
-                 startActivity(intent)
+                val intent = Intent(this, QuizResultActivity::class.java)
+                intent.putExtra("SCORE", score)
+                intent.putExtra("TOTAL_QUESTIONS", questions.size)
+                startActivity(intent)
             }
         }
 
@@ -81,6 +84,8 @@ class QuizMudahActivity : AppCompatActivity() {
         optC.text = "C. ${question.options[2]}"
         optD.text = "D. ${question.options[3]}"
         enableOptions(true)
+        tvWrong.visibility = View.GONE
+        tvInfo.visibility = View.GONE
     }
 
     private fun checkAnswer(selectedIndex: Int) {
@@ -92,7 +97,9 @@ class QuizMudahActivity : AppCompatActivity() {
         } else {
             highlightAnswer(selectedIndex, false)
             highlightAnswer(question.correctAnswerIndex, true)
+            tvWrong.visibility = View.VISIBLE
         }
+        tvInfo.visibility = View.VISIBLE
     }
 
     private fun highlightAnswer(index: Int, isCorrect: Boolean) {
