@@ -132,7 +132,7 @@ class QuizSedangActivity : AppCompatActivity() {
                     isAnswered = true
                     val question = questions[currentQuestionIndex]
                     if (droppedText == question.correctAnswer) {
-                        score++
+                        score += 20 // Mengubah skor menjadi 20 per soal
                         target.text = droppedText
                         target.setBackgroundColor(Color.GREEN)
                         Snackbar.make(v, "Jawaban Benar!", Snackbar.LENGTH_SHORT).show()

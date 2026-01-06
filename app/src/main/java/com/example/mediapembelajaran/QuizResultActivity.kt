@@ -16,9 +16,9 @@ class QuizResultActivity : AppCompatActivity() {
         val btnFinish = findViewById<Button>(R.id.btnFinish)
 
         val score = intent.getIntExtra("SCORE", 0)
-        val totalQuestions = intent.getIntExtra("TOTAL_QUESTIONS", 0)
+        val totalScore = intent.getIntExtra("TOTAL_QUESTIONS", 0) * 20
 
-        tvScore.text = "Skor Anda: $score/$totalQuestions"
+        tvScore.text = "$score/$totalScore"
 
         btnFinish.setOnClickListener {
             val intent = Intent(this, QuizLevelActivity::class.java)

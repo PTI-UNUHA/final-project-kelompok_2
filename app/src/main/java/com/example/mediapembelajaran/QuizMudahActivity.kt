@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
+import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
@@ -21,6 +22,8 @@ class QuizMudahActivity : AppCompatActivity() {
     private lateinit var btnNext: Button
     private lateinit var tvWrong: TextView
     private lateinit var tvInfo: TextView
+    private lateinit var tvProgress: TextView
+    private lateinit var progressBar: ProgressBar
 
     private val questions = listOf(
         Question("Variabel dalam Python yang digunakan untuk menyimpan teks adalah...",
@@ -47,6 +50,8 @@ class QuizMudahActivity : AppCompatActivity() {
         btnNext = findViewById(R.id.btnNext)
         tvWrong = findViewById(R.id.tvWrong)
         tvInfo = findViewById(R.id.tvInfo)
+        tvProgress = findViewById(R.id.tvProgress)
+        progressBar = findViewById(R.id.progressBar)
         val btnHome = findViewById<Button>(R.id.btnHome)
 
         displayQuestion()
@@ -60,7 +65,6 @@ class QuizMudahActivity : AppCompatActivity() {
             currentQuestionIndex++
             if (currentQuestionIndex < questions.size) {
                 displayQuestion()
-                resetOptionStyles()
             } else {
                 // Kuis selesai, pindah ke layar hasil
                 val intent = Intent(this, QuizResultActivity::class.java)
@@ -77,12 +81,19 @@ class QuizMudahActivity : AppCompatActivity() {
     }
 
     private fun displayQuestion() {
+        resetOptionStyles()
+
         val question = questions[currentQuestionIndex]
         tvQuestion.text = question.questionText
         optA.text = "A. ${question.options[0]}"
         optB.text = "B. ${question.options[1]}"
         optC.text = "C. ${question.options[2]}"
         optD.text = "D. ${question.options[3]}"
+
+        progressBar.max = questions.size
+        progressBar.progress = currentQuestionIndex + 1
+        tvProgress.text = "${currentQuestionIndex + 1}/${questions.size}"
+
         enableOptions(true)
         tvWrong.visibility = View.GONE
         tvInfo.visibility = View.GONE
@@ -92,7 +103,7 @@ class QuizMudahActivity : AppCompatActivity() {
         enableOptions(false)
         val question = questions[currentQuestionIndex]
         if (selectedIndex == question.correctAnswerIndex) {
-            score++
+            score += 20
             highlightAnswer(selectedIndex, true)
         } else {
             highlightAnswer(selectedIndex, false)

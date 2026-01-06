@@ -39,64 +39,73 @@
     </androidx.appcompat.widget.Toolbar>
 
     <!-- Timer, Progress -->
-    <LinearLayout
+    <androidx.cardview.widget.CardView
         android:id="@+id/topProgress"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/toolbar"
-        android:orientation="horizontal"
-        android:gravity="center_vertical"
-        android:padding="8dp">
+        android:layout_margin="8dp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="4dp">
 
-        <ImageView
-            android:layout_width="18dp"
-            android:layout_height="18dp"
-            android:src="@drawable/ic_timer" />
-
-        <TextView
-            android:id="@+id/tvTimer"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="00:45"
-            android:textColor="#2A3AA8"
-            android:textSize="14sp"
-            android:layout_marginLeft="6dp" />
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:background="#FFFFFF"
+            android:padding="12dp">
 
-        <ProgressBar
-            android:id="@+id/progressBar"
-            android:layout_width="0dp"
-            android:layout_height="14dp"
-            android:layout_weight="1"
-            android:indeterminate="false"
-            android:max="100"
-            android:progress="30"
-            android:layout_marginLeft="16dp"
-            style="@android:style/Widget.ProgressBar.Horizontal" />
+            <ImageView
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:src="@drawable/ic_timer" />
 
-        <TextView
-            android:id="@+id/tvProgress"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="3/10"
-            android:textColor="#000"
-            android:textSize="14sp"
-            android:layout_marginLeft="8dp" />
-    </LinearLayout>
+            <TextView
+                android:id="@+id/tvTimer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:text="00:45"
+                android:textColor="#2A3AA8"
+                android:textSize="14sp" />
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="@android:style/Widget.ProgressBar.Horizontal"
+                android:layout_width="0dp"
+                android:layout_height="14dp"
+                android:layout_marginStart="16dp"
+                android:layout_weight="1"
+                android:indeterminate="false"
+                android:max="5"
+                android:progress="0"
+                android:progressTint="#FFC107" />
+
+            <TextView
+                android:id="@+id/tvProgress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="0/5"
+                android:textColor="#000"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
 
     <!-- Main Scroll Area -->
     <ScrollView
-        android:layout_below="@id/topProgress"
-        android:layout_above="@+id/bottomNav"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_below="@id/topProgress"
+        android:layout_above="@+id/bottomNav"
         android:padding="16dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-
-
 
             <!-- Teks Soal -->
             <TextView
@@ -116,7 +125,7 @@
                 android:text="A   for i in range 5;"
                 android:padding="14dp"
                 android:textSize="16sp"
-                android:background="@drawable/opt_true"
+                android:background="@drawable/opt_normal"
                 android:textColor="#000"
                 android:layout_marginTop="12dp" />
 
@@ -140,7 +149,7 @@
                 android:text="C   total_apel ++ 5"
                 android:padding="14dp"
                 android:textSize="16sp"
-                android:background="@drawable/apt_false"
+                android:background="@drawable/opt_normal"
                 android:textColor="#000"
                 android:layout_marginTop="8dp" />
 
@@ -167,7 +176,8 @@
                 android:textColor="#FFFFFF"
                 android:background="#D32F2F"
                 android:padding="12dp"
-                android:layout_marginTop="14dp" />
+                android:layout_marginTop="14dp"
+                android:visibility="gone" />
 
             <TextView
                 android:id="@+id/tvInfo"
@@ -177,27 +187,28 @@
                 android:textColor="#000"
                 android:textSize="14sp"
                 android:padding="8dp"
-                android:layout_marginTop="4dp" />
+                android:layout_marginTop="4dp"
+                android:visibility="gone" />
 
-            <!-- Gambar dan Motivasi -->
+            <!-- Mascot Image -->
             <ImageView
-                android:id="@+id/imgMascot"
-                android:layout_width="160dp"
-                android:layout_height="180dp"
-                android:layout_marginTop="18dp"
-                android:src="@drawable/maskot"
-                android:layout_gravity="center" />
+                android:id="@+id/ivMascot"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="24dp"
+                android:src="@drawable/maskot" />
 
             <TextView
-                android:id="@+id/tvSpirit"
+                android:id="@+id/tvMascotText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="8dp"
                 android:text="Tetap Semangat!"
                 android:textColor="#000"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                android:layout_marginTop="6dp"
-                android:layout_gravity="center" />
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
         </LinearLayout>
     </ScrollView>

@@ -68,26 +68,178 @@
             android:layout_height="12dp"
             android:layout_weight="1"
             android:max="100"
-            android:progress="40"
+            android:progress="0"
             android:layout_marginLeft="16dp" />
 
         <TextView
             android:id="@+id/tvProgress"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="3/10"
+            android:text="1/5"
             android:textColor="#000"
             android:textSize="15sp"
             android:layout_marginLeft="10dp" />
     </LinearLayout>
+    
+    <!-- BOTTOM NAV - MOVED TO BOTTOM -->
+    <LinearLayout
+        android:id="@+id/bottomNav"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:padding="10dp"
+        android:background="#FFFFFF"
+        android:elevation="4dp"
+        android:layout_alignParentBottom="true">
 
-    <!-- SCROLL CONTENT -->
+        <Button
+            android:id="@+id/btnPrev"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Sebelumnya"
+            android:textSize="16sp"
+            android:backgroundTint="#D32F2F"
+            android:textColor="#FFFFFF" />
+
+        <Space
+            android:layout_width="12dp"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/btnNext"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="BERIKUTNYA"
+            android:textSize="16sp"
+            android:backgroundTint="#29B6F6"
+            android:textColor="#FFFFFF" />
+    </LinearLayout>
+
+    <!-- CUSTOM KEYBOARD - NOW ABOVE BOTTOM NAV -->
+    <LinearLayout
+        android:id="@+id/customKeyboard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="5dp"
+        android:background="#000000"
+        android:layout_above="@id/bottomNav">
+
+        <!-- Baris 0: Angka 1-0 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+            <Button style="@style/Widget.AppCompat.Button.Borderless" android:text="1" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:textColor="#FFFFFF" />
+            <Button style="@style/Widget.AppCompat.Button.Borderless" android:text="2" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:textColor="#FFFFFF" />
+            <Button style="@style/Widget.AppCompat.Button.Borderless" android:text="3" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:textColor="#FFFFFF" />
+            <Button style="@style/Widget.AppCompat.Button.Borderless" android:text="4" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:textColor="#FFFFFF" />
+            <Button style="@style/Widget.AppCompat.Button.Borderless" android:text="5" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:textColor="#FFFFFF" />
+            <Button style="@style/Widget.AppCompat.Button.Borderless" android:text="6" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:textColor="#FFFFFF" />
+            <Button style="@style/Widget.AppCompat.Button.Borderless" android:text="7" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:textColor="#FFFFFF" />
+            <Button style="@style/Widget.AppCompat.Button.Borderless" android:text="8" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:textColor="#FFFFFF" />
+            <Button style="@style/Widget.AppCompat.Button.Borderless" android:text="9" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:textColor="#FFFFFF" />
+            <Button style="@style/Widget.AppCompat.Button.Borderless" android:text="0" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:textColor="#FFFFFF" />
+        </LinearLayout>
+
+        <!-- Baris 1: QWERTYUIOP -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+            <Button style="@style/Widget.AppCompat.Button.Borderless" android:text="Q" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:textColor="#FFFFFF" />
+            <Button style="@style/Widget.AppCompat.Button.Borderless" android:text="W" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:textColor="#FFFFFF" />
+            <Button style="@style/Widget.AppCompat.Button.Borderless" android:text="E" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:textColor="#FFFFFF" />
+            <Button style="@style/Widget.AppCompat.Button.Borderless" android:text="R" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:textColor="#FFFFFF" />
+            <Button style="@style/Widget.AppCompat.Button.Borderless" android:text="T" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:textColor="#FFFFFF" />
+            <Button style="@style/Widget.AppCompat.Button.Borderless" android:text="Y" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:textColor="#FFFFFF" />
+            <Button style="@style/Widget.AppCompat.Button.Borderless" android:text="U" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:textColor="#FFFFFF" />
+            <Button style="@style/Widget.AppCompat.Button.Borderless" android:text="I" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:textColor="#FFFFFF" />
+            <Button style="@style/Widget.AppCompat.Button.Borderless" android:text="O" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:textColor="#FFFFFF" />
+            <Button style="@style/Widget.AppCompat.Button.Borderless" android:text="P" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:textColor="#FFFFFF" />
+        </LinearLayout>
+
+        <!-- Baris 2: ASDFGHJKL -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+            <Button style="@style/Widget.AppCompat.Button.Borderless" android:text="A" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:textColor="#FFFFFF" />
+            <Button style="@style/Widget.AppCompat.Button.Borderless" android:text="S" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:textColor="#FFFFFF" />
+            <Button style="@style/Widget.AppCompat.Button.Borderless" android:text="D" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:textColor="#FFFFFF" />
+            <Button style="@style/Widget.AppCompat.Button.Borderless" android:text="F" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:textColor="#FFFFFF" />
+            <Button style="@style/Widget.AppCompat.Button.Borderless" android:text="G" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:textColor="#FFFFFF" />
+            <Button style="@style/Widget.AppCompat.Button.Borderless" android:text="H" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:textColor="#FFFFFF" />
+            <Button style="@style/Widget.AppCompat.Button.Borderless" android:text="J" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:textColor="#FFFFFF" />
+            <Button style="@style/Widget.AppCompat.Button.Borderless" android:text="K" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:textColor="#FFFFFF" />
+            <Button style="@style/Widget.AppCompat.Button.Borderless" android:text="L" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:textColor="#FFFFFF" />
+        </LinearLayout>
+
+        <!-- Baris 3: CAPS + ZXCVBNM + Hapus -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+            <Button
+                android:id="@+id/btnCaps"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:text="CAPS"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.5"
+                android:textSize="12sp"
+                android:textColor="#FFFFFF"/>
+            <Button style="@style/Widget.AppCompat.Button.Borderless" android:text="Z" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:textColor="#FFFFFF" />
+            <Button style="@style/Widget.AppCompat.Button.Borderless" android:text="X" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:textColor="#FFFFFF" />
+            <Button style="@style/Widget.AppCompat.Button.Borderless" android:text="C" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:textColor="#FFFFFF" />
+            <Button style="@style/Widget.AppCompat.Button.Borderless" android:text="V" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:textColor="#FFFFFF" />
+            <Button style="@style/Widget.AppCompat.Button.Borderless" android:text="B" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:textColor="#FFFFFF" />
+            <Button style="@style/Widget.AppCompat.Button.Borderless" android:text="N" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:textColor="#FFFFFF" />
+            <Button style="@style/Widget.AppCompat.Button.Borderless" android:text="M" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:textColor="#FFFFFF" />
+            <Button
+                android:id="@+id/btnDelete"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:text="HAPUS"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.5"
+                android:textSize="12sp"
+                android:textColor="#FFFFFF"/>
+        </LinearLayout>
+        
+        <!-- Baris 4: Simbol -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+            <Button style="@style/Widget.AppCompat.Button.Borderless" android:text="." android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:textColor="#FFFFFF" />
+            <Button style="@style/Widget.AppCompat.Button.Borderless" android:text="," android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:textColor="#FFFFFF" />
+            <Button style="@style/Widget.AppCompat.Button.Borderless" android:text="_" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:textColor="#FFFFFF" />
+            <Button style="@style/Widget.AppCompat.Button.Borderless" android:text="(" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:textColor="#FFFFFF" />
+            <Button style="@style/Widget.AppCompat.Button.Borderless" android:text=")" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:textColor="#FFFFFF" />
+            <Button style="@style/Widget.AppCompat.Button.Borderless" android:text="=" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:textColor="#FFFFFF" />
+            <Button style="@style/Widget.AppCompat.Button.Borderless" android:text="+" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:textColor="#FFFFFF" />
+            <Button style="@style/Widget.AppCompat.Button.Borderless" android:text="-" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:textColor="#FFFFFF" />
+            <Button style="@style/Widget.AppCompat.Button.Borderless" android:text=":" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:textColor="#FFFFFF" />
+            <Button style="@style/Widget.AppCompat.Button.Borderless" android:text="'" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:textColor="#FFFFFF" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- SCROLL CONTENT - NOW ABOVE KEYBOARD -->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="16dp"
         android:layout_below="@id/topProgress"
-        android:layout_above="@+id/bottomNav">
+        android:layout_above="@+id/customKeyboard">
 
         <LinearLayout
             android:orientation="vertical"
@@ -115,7 +267,11 @@
                 android:textSize="14sp"
                 android:textColor="#333"
                 android:fontFamily="monospace"
-                android:text="import itertools\nlist_data = [1,3,3,4]\nfor combo in itertools.product(list_data, repeat=3):\n    if _____:\n        print(combo)" />
+                android:text="import itertools
+list_data = [1,3,3,4]
+for combo in itertools.product(list_data, repeat=3):
+    if _____:
+        print(combo)" />
 
             <!-- MASKOT + BUBBLE -->
             <LinearLayout
@@ -127,8 +283,8 @@
 
                 <ImageView
                     android:id="@+id/imgMascot"
-                    android:layout_width="190dp"
-                    android:layout_height="190dp"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
                     android:src="@drawable/maskot" />
 
                 <TextView
@@ -145,253 +301,4 @@
         </LinearLayout>
     </ScrollView>
 
-    <!-- BOTTOM NAV -->
-    <LinearLayout
-        android:id="@+id/bottomNav"
-        android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:orientation="horizontal"
-        android:gravity="center"
-        android:padding="10dp"
-        android:layout_alignParentBottom="true"
-        android:background="#FFFFFF"
-        android:elevation="4dp">
-
-        <Button
-            android:id="@+id/btnPrev"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="Sebelumnya"
-            android:textSize="20sp"
-            android:background="#D32F2F"
-            android:textColor="#FFFFFF" />
-
-        <Space
-            android:layout_width="12dp"
-            android:layout_height="wrap_content" />
-
-        <Button
-            android:id="@+id/btnNext"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="BERIKUTNYA"
-            android:textSize="20sp"
-            android:background="#29B6F6"
-            android:textColor="#FFFFFF" />
-    </LinearLayout>
-
-    <!-- CUSTOM KEYBOARD -->
-    <LinearLayout
-        android:id="@+id/customKeyboard"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="8dp"
-        android:layout_marginTop="560dp">
-
-        <!-- Baris 1 -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center">
-
-            <Button
-                android:layout_width="0dp"
-                android:layout_height="48dp"
-                android:layout_weight="1"
-                android:text="A"
-                android:textColor="#333"
-                android:textSize="18sp"
-                android:background="#EEEEEE" />
-
-            <Space android:layout_width="6dp" android:layout_height="1dp" />
-
-            <Button
-                android:layout_width="0dp"
-                android:layout_height="48dp"
-                android:layout_weight="1"
-                android:text="B"
-                android:textColor="#333"
-                android:textSize="18sp"
-                android:background="#EEEEEE" />
-
-            <Space android:layout_width="6dp" android:layout_height="1dp" />
-
-            <Button
-                android:layout_width="0dp"
-                android:layout_height="48dp"
-                android:layout_weight="1"
-                android:text="C"
-                android:textColor="#333"
-                android:textSize="18sp"
-                android:background="#EEEEEE" />
-
-            <Space android:layout_width="6dp" android:layout_height="1dp" />
-
-            <Button
-                android:layout_width="0dp"
-                android:layout_height="48dp"
-                android:layout_weight="1"
-                android:text="D"
-                android:textColor="#333"
-                android:textSize="18sp"
-                android:background="#EEEEEE" />
-        </LinearLayout>
-
-        <!-- Baris 2 -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center"
-            android:layout_marginTop="8dp">
-
-            <Button
-                android:layout_width="0dp"
-                android:layout_height="48dp"
-                android:layout_weight="1"
-                android:text="E"
-                android:textColor="#333"
-                android:textSize="18sp"
-                android:background="#EEEEEE" />
-
-            <Space android:layout_width="6dp" android:layout_height="1dp" />
-
-            <Button
-                android:layout_width="0dp"
-                android:layout_height="48dp"
-                android:layout_weight="1"
-                android:text="F"
-                android:textColor="#333"
-                android:textSize="18sp"
-                android:background="#EEEEEE" />
-
-            <Space android:layout_width="6dp" android:layout_height="1dp" />
-
-            <Button
-                android:layout_width="0dp"
-                android:layout_height="48dp"
-                android:layout_weight="1"
-                android:text="G"
-                android:textColor="#333"
-                android:textSize="18sp"
-                android:background="#EEEEEE" />
-
-            <Space android:layout_width="6dp" android:layout_height="1dp" />
-
-            <Button
-                android:layout_width="0dp"
-                android:layout_height="48dp"
-                android:layout_weight="1"
-                android:text="H"
-                android:textColor="#333"
-                android:textSize="18sp"
-                android:background="#EEEEEE" />
-        </LinearLayout>
-
-        <!-- Baris 3 -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center"
-            android:layout_marginTop="8dp">
-
-            <Button
-                android:layout_width="0dp"
-                android:layout_height="48dp"
-                android:layout_weight="1"
-                android:text="I"
-                android:textColor="#333"
-                android:textSize="18sp"
-                android:background="#EEEEEE" />
-
-            <Space android:layout_width="6dp" android:layout_height="1dp" />
-
-            <Button
-                android:layout_width="0dp"
-                android:layout_height="48dp"
-                android:layout_weight="1"
-                android:text="J"
-                android:textColor="#333"
-                android:textSize="18sp"
-                android:background="#EEEEEE" />
-
-            <Space android:layout_width="6dp" android:layout_height="1dp" />
-
-            <Button
-                android:layout_width="0dp"
-                android:layout_height="48dp"
-                android:layout_weight="1"
-                android:text="K"
-                android:textColor="#333"
-                android:textSize="18sp"
-                android:background="#EEEEEE" />
-
-            <Space android:layout_width="6dp" android:layout_height="1dp" />
-
-            <Button
-                android:layout_width="0dp"
-                android:layout_height="48dp"
-                android:layout_weight="1"
-                android:text="L"
-                android:textColor="#333"
-                android:textSize="18sp"
-                android:background="#EEEEEE" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center"
-            android:layout_marginTop="8dp">
-
-            <Button
-                android:layout_width="0dp"
-                android:layout_height="48dp"
-                android:layout_weight="1"
-                android:text="M"
-                android:textColor="#333"
-                android:textSize="18sp"
-                android:background="#EEEEEE" />
-
-            <Space android:layout_width="6dp" android:layout_height="1dp" />
-
-            <Button
-                android:layout_width="0dp"
-                android:layout_height="48dp"
-                android:layout_weight="1"
-                android:text="N"
-                android:textColor="#333"
-                android:textSize="18sp"
-                android:background="#EEEEEE" />
-
-            <Space android:layout_width="6dp" android:layout_height="1dp" />
-
-            <Button
-                android:layout_width="0dp"
-                android:layout_height="48dp"
-                android:layout_weight="1"
-                android:text="O"
-                android:textColor="#333"
-                android:textSize="18sp"
-                android:background="#EEEEEE" />
-
-            <Space android:layout_width="6dp" android:layout_height="1dp" />
-
-            <Button
-                android:layout_width="0dp"
-                android:layout_height="48dp"
-                android:layout_weight="1"
-                android:text="P"
-                android:textColor="#333"
-                android:textSize="18sp"
-                android:background="#EEEEEE" />
-        </LinearLayout>
-
-    </LinearLayout>
 </RelativeLayout>
