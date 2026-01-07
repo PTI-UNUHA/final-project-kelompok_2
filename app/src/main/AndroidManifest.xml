@@ -12,6 +12,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MediaPembelajaran">
 
+        <activity android:name=".ScoreResultActivity" />
+        <activity android:name=".ScoreResult1Activity" />
+        <activity android:name=".ScoreResult2Activity" />
+
         <activity android:name=".QuizResultActivity" />
         <activity android:name=".LeaderboardSulitActivity" />
         <activity android:name=".LeaderboardSedangActivity" />

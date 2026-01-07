@@ -86,7 +86,7 @@ class QuizSedangActivity : AppCompatActivity() {
                 resetDropBox()
                 isAnswered = false
             } else {
-                val intent = Intent(this, QuizResultActivity::class.java)
+                val intent = Intent(this, ScoreResult1Activity::class.java)
                 intent.putExtra("SCORE", score)
                 intent.putExtra("TOTAL_QUESTIONS", questions.size)
                 startActivity(intent)

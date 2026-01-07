@@ -67,7 +67,7 @@ class QuizMudahActivity : AppCompatActivity() {
                 displayQuestion()
             } else {
                 // Kuis selesai, pindah ke layar hasil
-                val intent = Intent(this, QuizResultActivity::class.java)
+                val intent = Intent(this, ScoreResultActivity::class.java)
                 intent.putExtra("SCORE", score)
                 intent.putExtra("TOTAL_QUESTIONS", questions.size)
                 startActivity(intent)

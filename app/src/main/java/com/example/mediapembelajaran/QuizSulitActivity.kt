@@ -51,7 +51,7 @@ class QuizSulitActivity : AppCompatActivity() {
                 currentQuestionIndex++
                 displayQuestion()
             } else {
-                val intent = Intent(this, QuizResultActivity::class.java)
+                val intent = Intent(this, ScoreResult2Activity::class.java)
                 intent.putExtra("SCORE", score)
                 intent.putExtra("TOTAL_QUESTIONS", questionList.size)
                 startActivity(intent)
