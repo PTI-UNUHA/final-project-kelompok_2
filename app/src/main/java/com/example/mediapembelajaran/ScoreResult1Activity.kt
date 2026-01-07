@@ -1,5 +1,6 @@
 package com.example.mediapembelajaran
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
@@ -18,8 +19,13 @@ class ScoreResult1Activity : AppCompatActivity() {
         val btnHome: Button = findViewById(R.id.btnHome)
 
         val score = intent.getIntExtra("SCORE", 0)
-        val totalQuestions = intent.getIntExtra("TOTAL_QUESTIONS", 0)
-        val totalScore = totalQuestions * 20
+        val totalScore = 100 // Corrected total score to 100
+
+        // Simpan skor ke SharedPreferences
+        val sharedPreferences = getSharedPreferences("MyScores", Context.MODE_PRIVATE)
+        val editor = sharedPreferences.edit()
+        editor.putInt("MEDIUM_SCORE", score)
+        editor.apply()
 
         tvScore.text = "$score/$totalScore"
 
@@ -45,6 +51,10 @@ class ScoreResult1Activity : AppCompatActivity() {
 
         btnHome.setOnClickListener {
             val intent = Intent(this, HomeActivity::class.java)
+            val name = getIntent().getStringExtra("NAMA")
+            val nim = getIntent().getStringExtra("NIM")
+            intent.putExtra("NAMA", name)
+            intent.putExtra("NIM", nim)
             startActivity(intent)
             finish()
         }

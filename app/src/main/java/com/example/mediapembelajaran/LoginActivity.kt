@@ -1,27 +1,33 @@
 package com.example.mediapembelajaran
 
-import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
-import androidx.activity.enableEdgeToEdge
+import android.widget.EditText
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 
-class  LoginActivity : AppCompatActivity() {
-    @SuppressLint("MissingInflatedId")
+class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         setContentView(R.layout.activity_login)
 
+        val inputName = findViewById<EditText>(R.id.inputName)
+        val inputNim = findViewById<EditText>(R.id.inputNim)
         val btnMasuk = findViewById<Button>(R.id.btnMasuk)
 
         btnMasuk.setOnClickListener {
-            val intent = Intent(this, HomeActivity::class.java)
+            val name = inputName.text.toString().trim()
+            val nim = inputNim.text.toString().trim()
 
-            startActivity(intent)
+            if (name.isNotEmpty() && nim.isNotEmpty()) {
+                val intent = Intent(this, HomeActivity::class.java)
+                intent.putExtra("USER_NAME", name)
+                intent.putExtra("USER_NIM", nim)
+                startActivity(intent)
+            } else {
+                Toast.makeText(this, "Nama dan NIM tidak boleh kosong!", Toast.LENGTH_SHORT).show()
+            }
         }
     }
 }

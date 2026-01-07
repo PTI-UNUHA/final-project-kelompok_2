@@ -15,6 +15,7 @@
         <activity android:name=".ScoreResultActivity" />
         <activity android:name=".ScoreResult1Activity" />
         <activity android:name=".ScoreResult2Activity" />
+        <activity android:name=".ScoreLevelActivity" />
 
         <activity android:name=".QuizResultActivity" />
         <activity android:name=".LeaderboardSulitActivity" />
@@ -30,7 +31,6 @@
         <activity android:name=".QuizMudahActivity" />
 
         <activity android:name=".LeaderboardLevelActivity" />
-        <activity android:name=".SkorLevelActivity" />
         <activity android:name=".QuizLevelActivity" />
 
         <activity android:name=".MateriActivity" />
